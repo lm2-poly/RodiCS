@@ -1,0 +1,29 @@
+<dolfin xmlns:dolfin="http://www.fenicsproject.org">
+  <mesh celltype="interval" dim="3">
+    <vertices size="11">
+      <vertex index="0" x="0.000000e+00" y="0.000000e+00" z="0.000000e+00"/>
+      <vertex index="1" x="0.000000e+00" y="1.000000e-01" z="0.000000e+00"/>
+      <vertex index="2" x="0.000000e+00" y="2.000000e-01" z="0.000000e+00"/>
+      <vertex index="3" x="0.000000e+00" y="3.000000e-01" z="0.000000e+00"/>
+      <vertex index="4" x="0.000000e+00" y="4.000000e-01" z="0.000000e+00"/>
+      <vertex index="5" x="0.000000e+00" y="5.000000e-01" z="0.000000e+00"/>
+      <vertex index="6" x="0.000000e+00" y="6.000000e-01" z="0.000000e+00"/>
+      <vertex index="7" x="0.000000e+00" y="7.000000e-01" z="0.000000e+00"/>
+      <vertex index="8" x="0.000000e+00" y="8.000000e-01" z="0.000000e+00"/>
+      <vertex index="9" x="0.000000e+00" y="9.000000e-01" z="0.000000e+00"/>
+      <vertex index="10" x="0.000000e+00" y="1.000000e+00" z="0.000000e+00"/>
+    </vertices>
+    <cells size="10">
+      <line index="0" v0="0" v1="1"/>
+      <line index="1" v0="1" v1="2"/>
+      <line index="2" v0="2" v1="3"/>
+      <line index="3" v0="3" v1="4"/>
+      <line index="4" v0="4" v1="5"/>
+      <line index="5" v0="5" v1="6"/>
+      <line index="6" v0="6" v1="7"/>
+      <line index="7" v0="7" v1="8"/>
+      <line index="8" v0="8" v1="9"/>
+      <line index="9" v0="9" v1="10"/>
+    </cells>
+  </mesh>
+</dolfin>

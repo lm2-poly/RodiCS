@@ -1,0 +1,69 @@
+<dolfin xmlns:dolfin="http://www.fenicsproject.org">
+  <mesh celltype="interval" dim="3">
+    <vertices size="31">
+      <vertex index="0" x="0.000000e+00" y="0.000000e+00" z="0.000000e+00"/>
+      <vertex index="1" x="0.000000e+00" y="3.333333e-02" z="0.000000e+00"/>
+      <vertex index="2" x="0.000000e+00" y="6.666667e-02" z="0.000000e+00"/>
+      <vertex index="3" x="0.000000e+00" y="1.000000e-01" z="0.000000e+00"/>
+      <vertex index="4" x="0.000000e+00" y="1.333333e-01" z="0.000000e+00"/>
+      <vertex index="5" x="0.000000e+00" y="1.666667e-01" z="0.000000e+00"/>
+      <vertex index="6" x="0.000000e+00" y="2.000000e-01" z="0.000000e+00"/>
+      <vertex index="7" x="0.000000e+00" y="2.333333e-01" z="0.000000e+00"/>
+      <vertex index="8" x="0.000000e+00" y="2.666667e-01" z="0.000000e+00"/>
+      <vertex index="9" x="0.000000e+00" y="3.000000e-01" z="0.000000e+00"/>
+      <vertex index="10" x="0.000000e+00" y="3.333333e-01" z="0.000000e+00"/>
+      <vertex index="11" x="0.000000e+00" y="3.666667e-01" z="0.000000e+00"/>
+      <vertex index="12" x="0.000000e+00" y="4.000000e-01" z="0.000000e+00"/>
+      <vertex index="13" x="0.000000e+00" y="4.333333e-01" z="0.000000e+00"/>
+      <vertex index="14" x="0.000000e+00" y="4.666667e-01" z="0.000000e+00"/>
+      <vertex index="15" x="0.000000e+00" y="5.000000e-01" z="0.000000e+00"/>
+      <vertex index="16" x="0.000000e+00" y="5.333333e-01" z="0.000000e+00"/>
+      <vertex index="17" x="0.000000e+00" y="5.666667e-01" z="0.000000e+00"/>
+      <vertex index="18" x="0.000000e+00" y="6.000000e-01" z="0.000000e+00"/>
+      <vertex index="19" x="0.000000e+00" y="6.333333e-01" z="0.000000e+00"/>
+      <vertex index="20" x="0.000000e+00" y="6.666667e-01" z="0.000000e+00"/>
+      <vertex index="21" x="0.000000e+00" y="7.000000e-01" z="0.000000e+00"/>
+      <vertex index="22" x="0.000000e+00" y="7.333333e-01" z="0.000000e+00"/>
+      <vertex index="23" x="0.000000e+00" y="7.666667e-01" z="0.000000e+00"/>
+      <vertex index="24" x="0.000000e+00" y="8.000000e-01" z="0.000000e+00"/>
+      <vertex index="25" x="0.000000e+00" y="8.333333e-01" z="0.000000e+00"/>
+      <vertex index="26" x="0.000000e+00" y="8.666667e-01" z="0.000000e+00"/>
+      <vertex index="27" x="0.000000e+00" y="9.000000e-01" z="0.000000e+00"/>
+      <vertex index="28" x="0.000000e+00" y="9.333333e-01" z="0.000000e+00"/>
+      <vertex index="29" x="0.000000e+00" y="9.666667e-01" z="0.000000e+00"/>
+      <vertex index="30" x="0.000000e+00" y="1.000000e+00" z="0.000000e+00"/>
+    </vertices>
+    <cells size="30">
+      <line index="0" v0="0" v1="1"/>
+      <line index="1" v0="1" v1="2"/>
+      <line index="2" v0="2" v1="3"/>
+      <line index="3" v0="3" v1="4"/>
+      <line index="4" v0="4" v1="5"/>
+      <line index="5" v0="5" v1="6"/>
+      <line index="6" v0="6" v1="7"/>
+      <line index="7" v0="7" v1="8"/>
+      <line index="8" v0="8" v1="9"/>
+      <line index="9" v0="9" v1="10"/>
+      <line index="10" v0="10" v1="11"/>
+      <line index="11" v0="11" v1="12"/>
+      <line index="12" v0="12" v1="13"/>
+      <line index="13" v0="13" v1="14"/>
+      <line index="14" v0="14" v1="15"/>
+      <line index="15" v0="15" v1="16"/>
+      <line index="16" v0="16" v1="17"/>
+      <line index="17" v0="17" v1="18"/>
+      <line index="18" v0="18" v1="19"/>
+      <line index="19" v0="19" v1="20"/>
+      <line index="20" v0="20" v1="21"/>
+      <line index="21" v0="21" v1="22"/>
+      <line index="22" v0="22" v1="23"/>
+      <line index="23" v0="23" v1="24"/>
+      <line index="24" v0="24" v1="25"/>
+      <line index="25" v0="25" v1="26"/>
+      <line index="26" v0="26" v1="27"/>
+      <line index="27" v0="27" v1="28"/>
+      <line index="28" v0="28" v1="29"/>
+      <line index="29" v0="29" v1="30"/>
+    </cells>
+  </mesh>
+</dolfin>
