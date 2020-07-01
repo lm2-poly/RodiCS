@@ -68,11 +68,9 @@ For the static case, the script `static_verification.py` simulates the deformati
 For the dynamic case, the script `dynamic_verification.py` also simulates the deformation of rods under a uniformly distributed load in time, with this time fixing the mesh and refining the time step. Here again, the discretisation error and the observed order of convergence are calculated and plotted.
 
 ## Contributing
-I welcome reports of any kind of issues and bugs that might be encountered in the code.
+Reports of any kind of issues and bugs that might be encountered in the code are very welcome.
 
-Please feel free to pull requests to improve this module. Examples of ideas are: optimising the solver, add test simulations, improve visualisation functions, etc.
-
-Additionally, it would be great to enrich the code with other forces like gravity/buoyancy and electric/magnetic forces. Another amelioration would be to include parameters that vary in space, such as a non-uniform flow speed, heterogeneous rod material, varying rod cross-section, etc. Finally, we want this code to be generalised for branched structures.
+Please feel free to pull requests to improve this module. Examples of ideas are: optimising the solver, add test simulations, improve visualisation functions, etc. Additionally, it would be great to enrich the code with other forces like gravity/buoyancy and electric/magnetic forces. Another amelioration would be to include parameters that vary in space, such as a non-uniform flow speed, heterogeneous rod material, varying rod cross-section, etc. Finally, we want this code to be generalised for branched structures.
 
 Hope you'll enjoy deforming rods!
 

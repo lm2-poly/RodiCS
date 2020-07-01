@@ -23,7 +23,7 @@ bibliography: paper.bib
 
 # Summary
 
-Elastic rods are long and thin structures, and are the object of many dynamical systems in nature, from bending and swaying plants [@hassani_large_2016; @luhar_wave-induced_2016; @gosselin_mechanics_2019] to swimming flagellated and ciliated bacteria [@brennen_fluid_1977; @lauga_bacterial_2016] and propulsing caringiform fish [@cheng_continuous_1998]. In industry as well, elastic rods serve as models to study drilling risers in offshore sites and tall chimney stacks in constructions that may vibrate in presence of water or air flows [@paidoussis_fluid-structure_2010]. With the prevalence of rods in mechanical problems, it is important to have an efficient numerical tool reproducing faithfully the observed dynamics. RodiCS is a Python code that fulfills this task, and simulates the motion of elastic rods under specified forces.
+Elastic rods are long and thin structures, and are the object of many dynamical systems in nature, from bending and swaying plants [@hassani_large_2016; @luhar_wave-induced_2016; @gosselin_mechanics_2019] to swimming flagellated and ciliated bacteria [@brennen_fluid_1977; @lauga_bacterial_2016] and propulsing carangiform fish [@cheng_continuous_1998]. In industry as well, elastic rods serve as models to study drilling risers in offshore sites and tall chimney stacks in constructions that may vibrate in presence of water or air flows [@paidoussis_fluid-structure_2010]. With the prevalence of rods in mechanical problems, it is important to have an efficient numerical tool reproducing faithfully the observed dynamics. RodiCS is a Python code that fulfills this task, and simulates the motion of elastic rods under specified forces.
 
 # Description
 
