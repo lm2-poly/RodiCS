@@ -10,11 +10,11 @@
 
 RodiCS is a Python code that simulates static and dynamic deformation of elastic rods. It solves the Kirchhoff equations with finite elements using the [FEniCS](https://fenicsproject.org/) platform.
 
-This module was implemented during my Masters research project at Polytechnique Montréal:
+This code was written during my Masters research project at Polytechnique Montréal:
 
-[Mouad Boudina, Biomechanics of vibrating soft corals, Polytechnique Montréal, 2020](https://publications.polymtl.ca/4xxx/).
+[Mouad Boudina (2020). On the mechanics of vibrating soft corals and particle interception. Polytechnique Montréal.](https://publications.polymtl.ca/4xxx/).
 
-Rod simulations are the subject of Chapter 7. You'll find the Kirchhoff equations, the mechanical and fluid-dynamical load expressions, verification and validation of the code, and finally simulation cases. I also included in it an appendix on the FEniCS implementation in Python describing the syntax and functions used in the code.
+Rod simulations are the subject of Chapter 7. You'll find the Kirchhoff equations, the mechanical and fluid-dynamical load expressions, verification and validation of the code, and finally simulation cases. I also included in it an appendix on the FEniCS implementation in Python, describing the syntax and functions used in the code.
 
 ## Dependencies
 
@@ -24,14 +24,14 @@ RodiCS works on Python (version 3.8.2), and requires FEniCS (version 2019.1.0), 
 
 ### Mesh
 
-First you will need a mesh file of the rod. The mesh consists of one-dimensional intervals embedded in a three-dimensional space. It can be saved into an `.xml` file. There are already some mesh files in the `xmf_files/` folder. Though, you can generate your own `.xml` file with the script `create_xml.py`.
+First you will need a mesh file of the rod. The mesh consists of one-dimensional intervals embedded in a three-dimensional space. It can be saved into an `.xml` file. There are already some mesh files in the `xmf_files/` folder. Though, you can generate your own mesh with the script `create_xml.py`.
 
-A quick check whether the mesh is well loaded and represents the shape desired, there is the script `read_mesh.py` which reads the mesh and plots it in 3D.
+As a quick check whether the mesh is well loaded and represents the shape desired, there is the script `read_mesh.py` which reads the mesh and plots it in 3D.
 
 ### Execution
 
 The execution file for each simulation type are called:
-- `static_exec.py` for static deformation,
+- `static_exec.py` for static deformations,
 - `dynamic_exec.py` for transient simulations,
 
 For each case, the principal functions `run_static` and `run_dynamic` are written respectively in the files `static.py` and `dynamic.py`.
@@ -60,7 +60,7 @@ The script `dynamic_test_oscillatory.py` simulates the motion of a rod under an 
 #### Wake-oscillator model
 The function `run_wake_oscillator` in `wake_oscillator.py` is written in the same fashion as `run_dyamic`. Because the wake-oscillator model assumes that the vortex-induced lift is an additional unknown governed by the van der Pol equation (see [Facchinetti et al.](https://www.sciencedirect.com/science/article/abs/pii/S0889974603001853)), we consider a new mixed space solution with additional subspaces, and the van der Pol equation is included in the final variational form.
 
-The script `wake_oscillator_exec.py` is the execution file where you can input the desired speed profile and material properties of the rod. 
+The script `wake_oscillator_exec.py` is the execution file where you can enter the desired speed profile and material properties of the rod. 
 
 ### Verification
 For the static case, the script `static_verification.py` simulates the deformation of rods, under a uniformly distributed load, for meshes of different refinement levels. The discretisation error and the observed order of convergence are then calculated and plotted.
