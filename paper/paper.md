@@ -16,7 +16,7 @@ authors:
 affiliations:
  - name: Department of Mechanical Engineering, Polytechnique Montréal, Québec, Canada
    index: 1
- - name: Laboratory for Multiscale Mechanics
+ - name: Laboratory for Multiscale Mechanics (LM2), Polytechnique Montréal, Québec, Canada
    index: 2
 date: 42 Month 2020
 bibliography: paper.bib
@@ -51,6 +51,6 @@ Finally, we encourage mechanicians and programmers to contribute in developing R
 
 # Acknowledgements
 
-The authors acknowledge the financial support from the Simulation-Based Engineering Science (SBES) program, funded through the CREATE grant of the National Sciences and Engineering Research Council of Canada (NSERC) as well as Discovery RGPIN-2019-07072.
+The authors acknowledge the financial support from the Simulation-Based Engineering Science (SBES) program, funded through the CREATE grant of the National Sciences and Engineering Research Council of Canada (NSERC), as well as from Discovery RGPIN-2019-07072.
 
 # References
