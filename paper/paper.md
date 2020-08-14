@@ -16,9 +16,9 @@ authors:
     orcid: 0000-0003-0639-7419
     affiliation: "1, 2"
 affiliations:
- - name: Department of Mechanical Engineering, Polytechnique Montréal, Québec, Canada
+ - name: Department of Mechanical Engineering, Polytechnique Montréal, Montréal, Québec, Canada
    index: 1
- - name: Laboratory for Multiscale Mechanics (LM2), Polytechnique Montréal, Québec, Canada
+ - name: Laboratory for Multiscale Mechanics (LM2), Polytechnique Montréal, Montréal, Québec, Canada
    index: 2
 date: 42 Month 2020
 bibliography: paper.bib
