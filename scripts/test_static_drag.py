@@ -36,30 +36,6 @@ rlx = 0.8
 # Import mesh
 meshy   = Mesh(mesh_file)
 
-# Run simulation
-#results = run_static(meshy, u0, 'drag', Cd*Cy, rlx)
-
-def view_3d():
-    """
-    If you want to hide the material frame, replace the arrays of results_T,
-    results_N, and results_B (i.e. results[0], results[1], and results[2]) with
-    an array full of None.
-    """
-    n_vertices = len(results[0])
-    
-    hidden_results = np.copy(results)
-    # Example to hide the binormal vector and the external forces
-    hidden_results[0] = np.array([None]*n_vertices*3).reshape(n_vertices,3)
-    hidden_results[1] = np.array([None]*n_vertices*3).reshape(n_vertices,3)
-    hidden_results[2] = np.array([None]*n_vertices*3).reshape(n_vertices,3)
-    hidden_results[4] = np.array([None]*n_vertices*3).reshape(n_vertices,3)
-    
-    ax = Axes3D(pp.figure(figsize=(5,3.5)))
-    prepare_frame(ax, 50, 30)
-    plotIt(ax, meshy, hidden_results, static=True)
-
-#view_3d()
-# =============================================================================
 # Successive simulations
 def run_succession(list_Cy):
     list_results = []
@@ -77,11 +53,19 @@ def draw_succession(ax, list_Cy, list_results, colors):
     for Cy, results, color in zip(list_Cy, list_results, colors):
         pos_x, pos_y = results[3,:,0], results[3,:,1]
         
-        ax.plot(pos_y, -pos_x, linewidth=1.5, linestyle='-', color=color)
+        ax.plot(pos_y, -pos_x, linewidth=1.5, linestyle='-', color=color,
+                label=r'$C_{\mathrm{Y}} = %.1f$' % Cy)
         ax.plot(-pos_y, -pos_x, linewidth=1.5, linestyle='-', color=color)
         
         ax.set_aspect('equal')
         ax.axis('off')
+        
+        ax.legend(loc='best',
+                  fontsize=10,
+                  frameon=False,
+                  ncol=1,
+                  labelspacing=0.3,
+                  handlelength=1.5)
 
 # Parameters used to plot Figure 1(a) in the JOSS paper
 list_Cy_tilde = np.array([0.001, 2, 4.7, 9.0, 27, 72, 99])
@@ -92,9 +76,4 @@ list_results = run_succession(list_Cy)
 
 ax = one_by_one()
 draw_succession(ax, list_Cy, list_results, colors)
-# =============================================================================
-# Quick postprocessing
-#total_L = total_length(meshy, results)
-
-#max_deflection = extract_deflection(meshy, u0, results)
-#reconf_number  = extract_reconf_number(meshy, u0, results)
+pp.show()

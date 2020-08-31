@@ -84,7 +84,7 @@ def run_dynamic(results, mesh, u0, which_force, force_mag, dt, Nt, Ur, Gamma,
     Nothing! Because the initialised array of results is a Python list of numpy
     arrays, the output is automatically updated (results before simulations:
     empty ---> results after simulations: full of results). In this way, even
-    if the simulatoi crashes in middle way, you can display your results and
+    if the simulation crashes in middle way, you can display your results and
     troubleshoot your problem.
     
     """

@@ -29,7 +29,7 @@ def prepare_frame(ax, lambd=15, phi=50):
     ax.text3D(-0.05,  0.05, 0, '$y$', (-1,1,0), color='green', fontsize=fontsize)
     ax.text3D( 0.0, 0.0, 0.13, '$z$', (-1,1,0), color='green', fontsize=fontsize)
 
-def plotIt(ax, meshy, results, to_scale=1, static=False, freq=5):
+def plotIt(ax, meshy, results, to_scale=1, static=False, freq=2):
     if static:
         results_T, results_N, results_B, results_W, results_Fext = results
     else:
@@ -130,7 +130,7 @@ def plotIt(ax, meshy, results, to_scale=1, static=False, freq=5):
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
     
-def save_sequence(freq, dt, meshy, results, name, to_scale):
+def save_sequence(freq, dt, meshy, results, name, to_scale=1):
     results_T, results_N, results_B, results_W, results_Fext, results_Speed \
     = results
     
@@ -138,7 +138,9 @@ def save_sequence(freq, dt, meshy, results, name, to_scale):
     
     ax = Axes3D(pp.figure())
 
-    for i, h in enumerate(range(0,Nt,freq)):
+    print('\nSaving image sequence')
+    
+    for i, h in enumerate(range(freq,Nt,freq)):
         # A progression bar...
         print('%3.1f' % (100*h/Nt) + '% ' + '%s' % ('.'*(50*h//Nt)))
         
@@ -148,9 +150,11 @@ def save_sequence(freq, dt, meshy, results, name, to_scale):
                     results_Fext[h], results_Speed[h]
         
         plotIt(ax, meshy, results_n, to_scale=to_scale)
-        pp.savefig('../output/%s_%03d.png' % (name, i))
+        pp.savefig('%s_%03d.png' % (name, i))
         
         ax.clear()
+        
+    print('Done')
 
 def plot_vs_time(ax, time_results, dt, label, color='black'):
     Nt = len(time_results) - 1

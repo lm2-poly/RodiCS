@@ -7,8 +7,8 @@ from visualisation import *
 from axes_world    import one_by_one
 # =============================================================================
 # Mesh
-#name = 'straight_10'
-name = 'straight_30'
+name = 'straight_10'
+#name = 'straight_30'
 
 mesh_file = '../xml_files/%s.xml' % name
 
@@ -21,33 +21,40 @@ u0 = np.array([np.sin(u0_th)*np.cos(u0_ph),
                np.sin(u0_th)*np.sin(u0_ph),
                np.cos(u0_th)])
 
-omeg  = 6.4*np.sqrt(0.028)
-def sine_func(t_n):
+omeg  = 2*np.pi
+def speed_func(t_n):
     """
     Returns the normalised velocity U(t)/U0.
     """
-    return np.sin(omeg*t_n)
+    return min(1,t_n)
 
 Cd    = 1.2
 St    = 0.16
 Gamma = 10
-
-# These are formulae used in Leclercq and de Langre (2018). In my thesis the
-# puslation is normalised by another constant, whence the factor sqrt(0.028).
-alpha = 0.65
-Cy    = 12.7 * ( (omeg/np.sqrt(0.028)) * alpha)**2 / 2.0
-Ur    = St * alpha*omeg*Gamma
+Cy    = 100
+Ur    = St * np.sqrt(np.pi * Cy / 4.)
 
 dt = 5e-4
-Nt = 4*int(2*np.pi/omeg/dt)
+Tf = 1
+Nt = int(Tf/dt)
+Nt = 100
 
 rlx = 0.8
 
+which_force = 'distributed'
+force_mag   = 10
+   
 meshy   = Mesh(mesh_file)
 results = initialise_results()
 
-run_dynamic(results, meshy, u0, 'drag', Cd*Cy, dt, Nt, Ur, Gamma, sine_func, rlx)
-
+run_dynamic(results, meshy, u0, which_force, force_mag, dt, Nt, Ur, Gamma,
+            speed_func, rlx)
+            
+# Image sequence saving.
+# You can animate your sequence with the software ffmpeg or imageJ.
+nb_frames = 100
+save_sequence(Nt//nb_frames, dt, meshy, results, 'output/test_ramp_up_dynamic')
+# =============================================================================
 def plot_at_n(n):
     """
     If you want to hide the material frame, replace the arrays of results_T,
@@ -69,19 +76,11 @@ def plot_at_n(n):
     prepare_frame(ax)
     plotIt(ax, meshy, results_n, to_scale=1, freq=1)
     
-n = int(0.75*Nt)
-plot_at_n(n)
-# =============================================================================
-# Image sequence saving.
-# You can animate your sequence with the software ffmpeg or imageJ.
-#nb_frames = 100
-#save_sequence(Nt//nb_frames, dt, meshy, results, 'test_oscillatory_flow')
+#n = int(0.5*Nt)
+#plot_at_n(n)
 # =============================================================================
 # Analysis
 #wx_tip = results[3][:,-1,0]
-#wx_all, wx_all = results[3][:,:,0], results[3][:,:,1]
 
 #ax = one_by_one()
 #plot_vs_time(ax, wx_tip, dt, r'$w_{0}$', color='black')
-#plot_profiles(ax, wx, wy)
-

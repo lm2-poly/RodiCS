@@ -50,9 +50,10 @@ def view_3d():
     plotIt(ax, meshy, hidden_results, static=True)
 
 view_3d()
+pp.show()
 # =============================================================================
 # Quick postprocessing
-total_L = total_length(meshy, results)
+#total_L = total_length(meshy, results)
 
-max_deflection = extract_deflection(meshy, u0, results)
-reconf_number  = extract_reconf_number(meshy, u0, results)
+#max_deflection = extract_deflection(meshy, u0, results)
+#reconf_number  = extract_reconf_number(meshy, u0, results)

@@ -41,6 +41,11 @@ results = initialise_results()
 
 run_wake_oscillator(results, meshy, u0, Cy, dt, Nt, Gamma, Ur, speed_func, rlx)
 
+# Image sequence saving.
+# You can animate your sequence with the software ffmpeg or imageJ.
+nb_frames = 100
+save_sequence(Nt//nb_frames, dt, meshy, results[:-1], 'output/test_ramp_up_wake_oscillator')
+# =============================================================================
 def plot_at_n(n):
     """
     If you want to know how to hide any vector, see the script static_exec.py
@@ -60,13 +65,8 @@ def plot_at_n(n):
     prepare_frame(ax)
     plotIt(ax, meshy, results_n, to_scale=1, freq=1)
 
-n = int(0.75*Nt)    
-plot_at_n(n)
-# =============================================================================
-# Image sequence saving.
-# You can animate your sequence with the software ffmpeg or imageJ.
-#nb_frames = 100
-#save_sequence(Nt//nb_frames, dt, meshy, results, 'test_drag_viv')
+#n = int(0.75*Nt)    
+#plot_at_n(n)
 # =============================================================================
 # Analysis
 #wx_tip = results[3][:,-1,0]

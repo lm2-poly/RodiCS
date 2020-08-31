@@ -27,6 +27,9 @@ Cl0 = 0.3
 A, eps = 12., 0.3
 
 def initialise_results():
+    """
+    [t, n, b, w, fext, q, speed]
+    """
     return [np.empty(0), np.empty(0), np.empty(0), np.empty(0), np.empty(0), \
             np.empty(0), np.empty(0)]
 
@@ -332,13 +335,13 @@ def run_wake_oscillator(results, mesh, u0, Cy, dt, Nt, Gamma, Ur,
     
     results[3] = np.array([[sol_old(e)[12:15] for e in coords]])
     
-    results[5] = np.array([[sol_old(e)[-2] for e in coords]])
+    results[6] = np.array([[sol_old(e)[-2] for e in coords]])
     
     fext_proj = project(fext, Vt)
     results[4] = np.array([[fext_proj(e) for e in coords]])
     
     speed_proj = project(speed, Vs)
-    results[6] = np.array([[speed_proj(e) for e in coords]])
+    results[5] = np.array([[speed_proj(e) for e in coords]])
     ###########################################################
     
     ##################
@@ -384,11 +387,11 @@ def run_wake_oscillator(results, mesh, u0, Cy, dt, Nt, Gamma, Ur,
     
         results[3] = np.vstack([results[3], current_w])
         
-        results[5] = np.vstack([results[5], current_q])
+        results[6] = np.vstack([results[6], current_q])
         
         results[4] = np.vstack([results[4], current_fext])
         
-        results[6] = np.vstack([results[6], current_speed])
+        results[5] = np.vstack([results[5], current_speed])
         
         sol_old.assign(sol) # DON'T FORGET ABOUT THIS LINE!
     ##################
