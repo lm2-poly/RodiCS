@@ -16,6 +16,8 @@ This code was written during my Masters research project at Polytechnique Montr√
 
 Rod simulations are the subject of Chapter 7. You'll find the Kirchhoff equations, the mechanical and fluid-dynamical load expressions, verification and validation of the code, and finally simulation cases. I also included in it an appendix on the FEniCS implementation in Python, describing the syntax and functions used in the code.
 
+Please do check the document `RodiCS_a_finite_element_solver_of_Kirchhoff_rods_under_fluid_flow_and_more.pdf`, it summarises the global perspective of the code and lists some of its advantages.
+
 ## Dependencies
 
 RodiCS works on Python (version 3.8.2), and requires FEniCS (version 2019.1.0), as well as NumPy (version 1.17.4) and Matplotlib (version 3.1.2) modules. Only for data postprocessing or code validation, you'll also need SciPy (version 1.4.1).
@@ -57,22 +59,22 @@ The function `run_dynamic` requires the same argument as in the static case, in 
 #### Wake-oscillator model
 The function `run_wake_oscillator` in `wake_oscillator.py` is written in the same fashion as `run_dyamic`. Because the wake-oscillator model assumes that the vortex-induced lift is an additional unknown governed by the van der Pol equation (see [Facchinetti et al. (2004)](https://www.sciencedirect.com/science/article/abs/pii/S0889974603001853)), we consider a new mixed space solution with additional subspaces, and the van der Pol equation is included in the final variational form.
 
-### Tests
-In each test case, you can open the file and tune the parameters as you wish. You can either launch the following command in terminal
+### Examples
+In each example, you can open the file and tune the parameters as you wish. You can either launch the following command in terminal
 ```
-python3 test_name.py
+python3 example_name.py
 ```
 or execute it in a Python interactive editor such as [Spyder](https://www.spyder-ide.org/).
 
 #### Static case
-The file `test_static_distributed.py` gives the deformation of a rod under a uniformly distributed load. After the simulation has done, a window will open with a 3D view of the rod.
+The file `example_static_distributed.py` gives the deformation of a rod under a uniformly distributed load. After the simulation has done, a window will open with a 3D view of the rod.
 
-Another test is in `test_static_drag.py`, which simulates a rod under static drag for different flow speeds. A figure will appear showing the deformations with a top view.
+Another example is in `example_static_drag.py`, which simulates a rod under static drag for different flow speeds. A figure will appear showing the deformations with a top view.
 
 #### Transient case
-We suggest three tests. The files `test_dynamic_ramp_up.py` and `test_dynamic_oscillatory.py` simulate the motion of a rod under a ramp up flow speed and an oscillatory flow. The file `test_wake_oscillator_ramp_up.py` simulates the motion of a rod under a ramp up flow speed, arising vortex-induced vibrations.
+We suggest three examples. The files `example_dynamic_ramp_up.py` and `example_dynamic_oscillatory.py` simulate the motion of a rod under a ramp up flow speed and an oscillatory flow. The file `example_wake_oscillator_ramp_up.py` simulates the motion of a rod under a ramp up flow speed, arising vortex-induced vibrations.
 
-In each of theses tests, a graphical window will open after the simulation has done. It means that an image sequence of the simulation is being saved. The sequence will be saved in the folder `output/`. If you want to make an animation of it, you can use some software like [ffmpeg](https://ffmpeg.org/ffmpeg.html) or [imageJ](https://imagej.net/Welcome). Moreover, there is the possibility to view the solution at a precise instant. Function plotting the time evolution of the tip displacement, as well as the deformation profiles in time, are also available, imported from the file `postprocessing.py`. If you want to test these features, you need to uncomment them.
+In each of theses examples, a graphical window will open after the simulation has done. It means that an image sequence of the simulation is being saved. The sequence will be saved in the folder `output/`. If you want to make an animation of it, you can use some software like [ffmpeg](https://ffmpeg.org/ffmpeg.html) or [imageJ](https://imagej.net/Welcome). Moreover, there is the possibility to view the solution at a precise instant. Function plotting the time evolution of the tip displacement, as well as the deformation profiles in time, are also available, imported from the file `postprocessing.py`. If you want to test these features, you need to uncomment them.
 
 It should be borne in mind that transient simulations might take time before completing, especially if the chosen time step is small, or the final instant is large.
 
@@ -91,10 +93,25 @@ Please feel free to pull requests to improve this module. Examples of ideas or i
 - solver optimisation,
 - high order time integration schemes,
 - branched and arborescent structures,
-- space-variating parameters, such as a non-uniform flow speed, heterogeneous rod material, varying rod cross-section, etc.,
-- additional forces, like gravity/buoyancy and electric/magnetic forces, etc.,
-- more test simulations,
+- space-variating parameters, such as a non-uniform flow speed, heterogeneous rod material...
+- additional forces, like gravity/buoyancy and electric/magnetic forces...
+- simulation and code tests,
 - advanced visualisation tools...
+
+## Citing
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4023287.svg)](https://doi.org/10.5281/zenodo.4023287)
+
+This code is made for sharing. If you find it helpful in your work, here is the DOI number to cite it: 10.5281/zenodo.4023287. A possible BibTeX entry might be:
+```
+@misc{rodics2020,
+	  title = {{RodiCS}: a finite element solver of {Kirchhoff} rods under fluid flow and more},
+      doi = {10.5281/zenodo.4023287},
+      url = {https://github.com/lm2-poly/RodiCS},
+      publisher = {Zenodo},
+      author = {Boudina, M.},
+      year = {2020}
+}
+```
 
 Hope you'll enjoy deforming rods!
 
