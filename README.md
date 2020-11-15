@@ -12,7 +12,7 @@ RodiCS is a Python code that simulates static and dynamic deformation of elastic
 
 This code was written during my Masters research project at Polytechnique Montréal:
 
-[Mouad Boudina (2020). On the mechanics of flow-induced vibration of soft corals and particle interception. Polytechnique Montréal.](https://publications.polymtl.ca/4xxx/) (the link is currently inactive, the thesis is available in this repository with the name `MSc_Thesis_MBoudina_2020.pdf`).
+[Mouad Boudina (2020). On the Mechanics of Flow-Induced Vibration of Soft Corals and Particle Interception. Polytechnique Montréal.](https://publications.polymtl.ca/5378/)
 
 Rod simulations are the subject of Chapter 7. You'll find the Kirchhoff equations, the mechanical and fluid-dynamical load expressions, verification and validation of the code, and finally simulation cases. I also included in it an appendix on the FEniCS implementation in Python, describing the syntax and functions used in the code.
 
@@ -104,7 +104,7 @@ Please feel free to pull requests to improve this module. Examples of ideas or i
 This code is made for sharing. If you find it helpful in your work, here is the DOI number to cite it: 10.5281/zenodo.4023287. A possible BibTeX entry might be:
 ```
 @misc{rodics2020,
-	  title = {{RodiCS}: a finite element solver of {Kirchhoff} rods under fluid flow and more},
+  title = {{RodiCS}: a finite element solver of {Kirchhoff} rods under fluid flow and more},
       doi = {10.5281/zenodo.4023287},
       url = {https://github.com/lm2-poly/RodiCS},
       publisher = {Zenodo},
